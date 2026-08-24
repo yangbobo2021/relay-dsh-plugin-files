@@ -1,7 +1,7 @@
 import type { ClientContext } from '@deepseek-ai/dsh-client-runtime/client'
 import type { TypertRemoteContribution } from '@deepseek-ai/dsh-typert-protocol'
 import { IconFolderOpenOutline16 } from '@deepseek-ai/dsh-client-ui-primitives'
-import type { IWorkbench } from '@relay/dsh-plugin-workbench/contracts'
+import type { IWorkbench } from 'relay-dsh-plugin-workbench/contracts'
 import { FILES_REMOTE } from '../remote.ts'
 import { FileExplorer } from './FileExplorer.tsx'
 import { FileExplorerStore } from './store.ts'

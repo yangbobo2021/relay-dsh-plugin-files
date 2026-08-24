@@ -18,10 +18,10 @@ test("README keeps the user-facing install contract documented", async () => {
   const zhReadme = await readFile(join(root, "README.zh.md"), "utf8");
   const screenshot = await readFile(join(root, "docs/images/dsh-files-preview.png"));
   const packageJson = JSON.parse(await readFile(join(root, "package.json"), "utf8"));
-  assert.match(readme, /@relay\/dsh-plugin-files/);
+  assert.match(readme, /relay-dsh-plugin-files/);
   assert.match(readme, /github:yangbobo2021\/relay-dsh-plugin-files#main/);
   assert.match(readme, /github:yangbobo2021\/relay-dsh-plugin-workbench#main/);
-  assert.match(readme, /@relay\/dsh-plugin-workbench/);
+  assert.match(readme, /relay-dsh-plugin-workbench/);
   assert.match(readme, /docs\/images\/dsh-files-preview\.png/);
   assert.match(readme, /\[中文\]\(README\.zh\.md\)/);
   assert.match(zhReadme, /\[English\]\(README\.md\)/);
@@ -29,7 +29,7 @@ test("README keeps the user-facing install contract documented", async () => {
   assert.ok(screenshot.length > 10_000);
   assert.ok(packageJson.files.includes("README.zh.md"));
   assert.ok(packageJson.files.includes("docs/images"));
-  assert.equal(packageJson.dependencies?.["@relay/dsh-plugin-workbench"], undefined);
-  assert.equal(packageJson.devDependencies?.["@relay/dsh-plugin-workbench"], "github:yangbobo2021/relay-dsh-plugin-workbench#main");
-  assert.equal(packageJson.peerDependencies?.["@relay/dsh-plugin-workbench"], "^0.1.0");
+  assert.equal(packageJson.dependencies?.["relay-dsh-plugin-workbench"], undefined);
+  assert.equal(packageJson.devDependencies?.["relay-dsh-plugin-workbench"], "github:yangbobo2021/relay-dsh-plugin-workbench#main");
+  assert.equal(packageJson.peerDependencies?.["relay-dsh-plugin-workbench"], "^0.1.0");
 });

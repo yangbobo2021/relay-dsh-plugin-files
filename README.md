@@ -2,14 +2,14 @@
 
 English | [中文](README.zh.md)
 
-**npm package:** `@relay/dsh-plugin-files`
+**npm package:** `relay-dsh-plugin-files`
 
-`@relay/dsh-plugin-files` adds a right-side workspace file explorer to the
+`relay-dsh-plugin-files` adds a right-side workspace file explorer to the
 official [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness)
 (DSH) Web UI. It lets you browse the active workspace and preview text files
 without leaving the conversation.
 
-The plugin uses `@relay/dsh-plugin-workbench` as its panel host. Install
+The plugin uses `relay-dsh-plugin-workbench` as its panel host. Install
 Workbench in the same DSH Profile.
 
 ![Relay Files side panel previewing a workspace file in DSH Web](docs/images/dsh-files-preview.png)
@@ -58,14 +58,11 @@ GitHub packages as transitive dependencies.
 
 #### npm release
 
-After `@relay/dsh-plugin-files` is published to npm, install it with:
+Install the published packages with:
 
 ```bash
-pnpm dlx @deepseek-ai/dsh@0.1.1-rc.2 plugin --profile web add @relay/dsh-plugin-workbench@latest @relay/dsh-plugin-files@latest
+pnpm dlx @deepseek-ai/dsh@0.1.1-rc.2 plugin --profile web add relay-dsh-plugin-workbench@latest relay-dsh-plugin-files@latest
 ```
-
-At the time this README was written, the npm package had not been published yet.
-If the command reports `404 Not Found`, use the GitHub install above.
 
 ### 2. Start or restart DSH Web
 
@@ -117,13 +114,13 @@ and multiple conversation backends.
 Stop DSH Web before changing plugins, then restart it afterward.
 
 ```bash
-dsh plugin --profile web why @relay/dsh-plugin-files
-dsh plugin --profile web update @relay/dsh-plugin-files
-dsh plugin --profile web remove @relay/dsh-plugin-files
+dsh plugin --profile web why relay-dsh-plugin-files
+dsh plugin --profile web update relay-dsh-plugin-files
+dsh plugin --profile web remove relay-dsh-plugin-files
 ```
 
 For GitHub installs, `pnpm` records the package source inside the DSH Profile.
-Run `dsh plugin --profile web why @relay/dsh-plugin-files` to inspect it.
+Run `dsh plugin --profile web why relay-dsh-plugin-files` to inspect it.
 
 ## Troubleshooting
 
@@ -132,7 +129,7 @@ Run `dsh plugin --profile web why @relay/dsh-plugin-files` to inspect it.
 Restart DSH Web after installing the plugin. Then inspect the Profile:
 
 ```bash
-dsh plugin --profile web why @relay/dsh-plugin-files
+dsh plugin --profile web why relay-dsh-plugin-files
 ```
 
 If the package came from GitHub `main`, try pinning a known commit SHA.

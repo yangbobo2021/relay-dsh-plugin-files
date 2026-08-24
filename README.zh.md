@@ -2,13 +2,13 @@
 
 [English](README.md) | 中文
 
-**npm 包名：** `@relay/dsh-plugin-files`
+**npm 包名：** `relay-dsh-plugin-files`
 
-`@relay/dsh-plugin-files` 为官方
+`relay-dsh-plugin-files` 为官方
 [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness)（DSH）Web UI
 增加右侧工作区文件浏览器。你可以在对话页面里浏览当前工作区，并预览文本文件。
 
-这个插件使用 `@relay/dsh-plugin-workbench` 作为面板宿主。请在同一个 DSH Profile
+这个插件使用 `relay-dsh-plugin-workbench` 作为面板宿主。请在同一个 DSH Profile
 中安装 Workbench。
 
 ![DSH Web 中预览工作区文件的 Relay Files 右侧面板](docs/images/dsh-files-preview.png)
@@ -54,14 +54,11 @@ Workbench，是因为 DSH Profile 中的 pnpm 会阻止 GitHub 包作为传递�
 
 #### npm 正式版本
 
-`@relay/dsh-plugin-files` 发布到 npm 后，可以这样安装：
+可以这样安装 npm 正式包：
 
 ```bash
-pnpm dlx @deepseek-ai/dsh@0.1.1-rc.2 plugin --profile web add @relay/dsh-plugin-workbench@latest @relay/dsh-plugin-files@latest
+pnpm dlx @deepseek-ai/dsh@0.1.1-rc.2 plugin --profile web add relay-dsh-plugin-workbench@latest relay-dsh-plugin-files@latest
 ```
-
-编写本文档时，该 npm 包尚未发布。如果命令提示 `404 Not Found`，请使用上面的
-GitHub 安装方式。
 
 ### 2. 启动或重启 DSH Web
 
@@ -108,9 +105,9 @@ pnpm dlx @deepseek-ai/dsh@0.1.1-rc.2 web
 修改插件前先停止 DSH Web，完成后重新启动。
 
 ```bash
-dsh plugin --profile web why @relay/dsh-plugin-files
-dsh plugin --profile web update @relay/dsh-plugin-files
-dsh plugin --profile web remove @relay/dsh-plugin-files
+dsh plugin --profile web why relay-dsh-plugin-files
+dsh plugin --profile web update relay-dsh-plugin-files
+dsh plugin --profile web remove relay-dsh-plugin-files
 ```
 
 如果是 GitHub 安装，`pnpm` 会在 DSH Profile 中记录来源。可以用 `why` 命令查看。
@@ -122,7 +119,7 @@ dsh plugin --profile web remove @relay/dsh-plugin-files
 安装插件后请重启 DSH Web，然后检查 Profile：
 
 ```bash
-dsh plugin --profile web why @relay/dsh-plugin-files
+dsh plugin --profile web why relay-dsh-plugin-files
 ```
 
 如果安装的是 GitHub `main`，可以尝试固定到一个已知 commit SHA。

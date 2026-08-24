@@ -3,6 +3,6 @@
 
 - insert:
     - id: relay-files-workbench-host
-      name: '@relay/dsh-plugin-workbench'
+      name: 'relay-dsh-plugin-workbench'
     - id: relay-files-host
-      name: '@relay/dsh-plugin-files'
+      name: 'relay-dsh-plugin-files'
