@@ -13,6 +13,12 @@ English | [中文](README.zh.md)
 **npm package:** [`relay-dsh-plugin-files`](https://www.npmjs.com/package/relay-dsh-plugin-files)
 · [All Relay DSH plugins](https://github.com/yangbobo2021/Relay/blob/codex/relay-foundation/docs/dsh-plugins.md)
 
+[![Live npm-installed Relay plugins in official DSH](https://raw.githubusercontent.com/yangbobo2021/Relay/codex/relay-foundation/docs/media/dsh-plugin-suite-demo.gif)](https://github.com/yangbobo2021/Relay/blob/codex/relay-foundation/docs/dsh-plugins.md)
+
+*Real npm-installed demo on official DSH: Files opens the Relay workspace
+`README.md` beside a live conversation. [Watch the H.264
+MP4](https://github.com/yangbobo2021/Relay/blob/codex/relay-foundation/docs/media/dsh-plugin-suite-demo.mp4?raw=1).*
+
 `relay-dsh-plugin-files` adds a right-side workspace file explorer to the
 official [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness)
 (DSH) Web UI. It lets you browse the active workspace and preview text files

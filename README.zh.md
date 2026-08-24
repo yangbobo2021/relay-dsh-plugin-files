@@ -13,6 +13,12 @@
 **npm 包名：** [`relay-dsh-plugin-files`](https://www.npmjs.com/package/relay-dsh-plugin-files)
 · [全部 Relay DSH 插件](https://github.com/yangbobo2021/Relay/blob/codex/relay-foundation/docs/dsh-plugins.zh.md)
 
+[![在官方 DSH 中实装运行的 Relay 插件](https://raw.githubusercontent.com/yangbobo2021/Relay/codex/relay-foundation/docs/media/dsh-plugin-suite-demo.gif)](https://github.com/yangbobo2021/Relay/blob/codex/relay-foundation/docs/dsh-plugins.zh.md)
+
+*演示来自官方 DSH 上的真实 npm 安装：Files 在真实对话旁打开 Relay 工作区的
+`README.md`。[观看 H.264
+MP4](https://github.com/yangbobo2021/Relay/blob/codex/relay-foundation/docs/media/dsh-plugin-suite-demo.mp4?raw=1)。*
+
 `relay-dsh-plugin-files` 为官方
 [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness)（DSH）Web UI
 增加右侧工作区文件浏览器。你可以在对话页面里浏览当前工作区，并预览文本文件。
