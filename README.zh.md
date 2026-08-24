@@ -8,7 +8,13 @@
 [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness)（DSH）Web UI
 增加右侧工作区文件浏览器。你可以在对话页面里浏览当前工作区，并预览文本文件。
 
-这个插件会自动安装 `@relay/dsh-plugin-workbench`。你不需要先手动安装 Workbench。
+这个插件使用 `@relay/dsh-plugin-workbench` 作为面板宿主。请在同一个 DSH Profile
+中安装 Workbench。
+
+![DSH Web 中预览工作区文件的 Relay Files 右侧面板](docs/images/dsh-files-preview.png)
+
+截图来自官方 DSH `0.1.1-rc.2`，安装了 Workbench、Files 和 Terminal。Files 不依赖
+Terminal；组合截图只是展示共享 Workbench 壳层。
 
 ## 我需要这个插件吗？
 
@@ -40,17 +46,18 @@ DSH 仍是开发预览版本，后续可能出现不兼容变化。
 在首个 npm 版本发布前，当前推荐使用 GitHub 安装：
 
 ```bash
-npx @deepseek-ai/dsh@0.1.1-rc.2 plugin --profile web add github:yangbobo2021/relay-dsh-plugin-files#main
+pnpm dlx @deepseek-ai/dsh@0.1.1-rc.2 plugin --profile web add github:yangbobo2021/relay-dsh-plugin-workbench#main github:yangbobo2021/relay-dsh-plugin-files#main
 ```
 
-如果希望可复现，请把 `#main` 改成具体 Tag 或完整 commit SHA。
+如果希望可复现，请把每个 `#main` 都改成具体 Tag 或完整 commit SHA。这里显式列出
+Workbench，是因为 DSH Profile 中的 pnpm 会阻止 GitHub 包作为传递依赖。
 
 #### npm 正式版本
 
 `@relay/dsh-plugin-files` 发布到 npm 后，可以这样安装：
 
 ```bash
-npx @deepseek-ai/dsh@0.1.1-rc.2 plugin --profile web add @relay/dsh-plugin-files@latest
+pnpm dlx @deepseek-ai/dsh@0.1.1-rc.2 plugin --profile web add @relay/dsh-plugin-workbench@latest @relay/dsh-plugin-files@latest
 ```
 
 编写本文档时，该 npm 包尚未发布。如果命令提示 `404 Not Found`，请使用上面的
@@ -59,7 +66,7 @@ GitHub 安装方式。
 ### 2. 启动或重启 DSH Web
 
 ```bash
-npx @deepseek-ai/dsh@0.1.1-rc.2 web
+pnpm dlx @deepseek-ai/dsh@0.1.1-rc.2 web
 ```
 
 如果你已经安装了 `dsh` 命令，也可以运行 `dsh web`。安装、更新或删除插件后都
@@ -84,7 +91,7 @@ npx @deepseek-ai/dsh@0.1.1-rc.2 web
 - 工作区边界检查，避免预览当前工作区之外的路径
 - 有大小限制的 UTF-8 文本预览，适合浏览器中使用
 - 文件过滤输入框
-- 自动安装 Workbench 壳层依赖
+- 与共享 Workbench 壳层组合使用
 
 二进制文件、非常大的文件、当前工作区之外的路径，不会按普通文本预览。
 

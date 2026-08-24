@@ -9,8 +9,14 @@ official [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness)
 (DSH) Web UI. It lets you browse the active workspace and preview text files
 without leaving the conversation.
 
-The plugin installs `@relay/dsh-plugin-workbench` automatically. You do not need
-to install Workbench first.
+The plugin uses `@relay/dsh-plugin-workbench` as its panel host. Install
+Workbench in the same DSH Profile.
+
+![Relay Files side panel previewing a workspace file in DSH Web](docs/images/dsh-files-preview.png)
+
+The screenshot was captured from official DSH `0.1.1-rc.2` with Workbench, Files,
+and Terminal installed. Files works without Terminal; the combined screenshot
+shows the shared Workbench shell.
 
 ## Do I Need This Plugin?
 
@@ -43,17 +49,19 @@ Stop a running DSH Web process before changing Profile plugins.
 Use this today, before the first npm release:
 
 ```bash
-npx @deepseek-ai/dsh@0.1.1-rc.2 plugin --profile web add github:yangbobo2021/relay-dsh-plugin-files#main
+pnpm dlx @deepseek-ai/dsh@0.1.1-rc.2 plugin --profile web add github:yangbobo2021/relay-dsh-plugin-workbench#main github:yangbobo2021/relay-dsh-plugin-files#main
 ```
 
-For a reproducible install, replace `#main` with a tag or full commit SHA.
+For a reproducible install, replace each `#main` with a tag or full commit SHA.
+The Workbench package is listed explicitly because DSH's pnpm profile blocks
+GitHub packages as transitive dependencies.
 
 #### npm release
 
 After `@relay/dsh-plugin-files` is published to npm, install it with:
 
 ```bash
-npx @deepseek-ai/dsh@0.1.1-rc.2 plugin --profile web add @relay/dsh-plugin-files@latest
+pnpm dlx @deepseek-ai/dsh@0.1.1-rc.2 plugin --profile web add @relay/dsh-plugin-workbench@latest @relay/dsh-plugin-files@latest
 ```
 
 At the time this README was written, the npm package had not been published yet.
@@ -62,7 +70,7 @@ If the command reports `404 Not Found`, use the GitHub install above.
 ### 2. Start or restart DSH Web
 
 ```bash
-npx @deepseek-ai/dsh@0.1.1-rc.2 web
+pnpm dlx @deepseek-ai/dsh@0.1.1-rc.2 web
 ```
 
 If you already have a `dsh` command installed, `dsh web` is equivalent. Restart
@@ -88,7 +96,7 @@ session first.
 - Workspace containment checks, so previews stay inside the active workspace
 - Bounded UTF-8 text previews for practical browser use
 - A filter box for quickly narrowing visible files
-- Automatic installation of the Workbench shell dependency
+- Composition with the shared Workbench shell
 
 Binary files, very large files, and paths outside the workspace are not previewed
 as plain text.
