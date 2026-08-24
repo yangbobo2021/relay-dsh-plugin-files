@@ -2,6 +2,7 @@
   "name": "relay-dsh-plugin-files",
   "version": "0.1.0",
   "description": "Workspace file explorer plugin for the Relay workbench in DeepSeek Harness.",
+  "license": "MIT",
   "type": "module",
   "main": "lib/host-plugin.js",
   "engines": {
