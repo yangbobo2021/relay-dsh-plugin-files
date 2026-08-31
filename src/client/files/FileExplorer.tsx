@@ -281,7 +281,7 @@ export function FileExplorer({ store, useSessions, workspaceFiles }: FileExplore
                 )
                 : preview.sourceView
                   ? <pre className={css.source}>{preview.content}{preview.truncated ? '\n[truncated]' : ''}</pre>
-                  : <div className={css.document}><MarkdownText text={preview.content} /></div>}
+                  : <div className={css.document}><MarkdownText text={preview.content} labels={{ code: { copyLabel: 'Copy', copiedLabel: 'Copied' }, footnotes: 'Footnotes' }} /></div>}
             </article>
             {treeVisible && <aside className={css.treePane} aria-label="File tree">{tree}</aside>}
           </div>
